@@ -1,7 +1,6 @@
-FROM --platform=$BUILDPLATFORM rust:1.82
+FROM --platform=$TARGETPLATFORM rust:1.82
 
 ARG TARGETPLATFORM
-ARG BUILDPLATFORM
 
 RUN apt-get update && apt-get install -y musl-tools
 RUN cargo install --locked cargo-chef
