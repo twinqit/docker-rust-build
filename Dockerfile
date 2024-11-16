@@ -1,4 +1,4 @@
-FROM rust:alpine
+FROM --platform=$BUILDPLATFORM rust:alpine
 
 WORKDIR /app
 
