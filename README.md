@@ -1,5 +1,6 @@
 # Docker Rust Build
 
-A base docker image that uses cargo-chef and zigbuild to speedup build times for Rust based Docker images.
+A base docker image that uses cargo-chef to speedup build times for Rust based Docker images. It also allows to cross
+build images by using musl.
 
-This is based on this tutorial: https://medium.com/@vladkens/fast-multi-arch-docker-build-for-rust-projects-a7db42f3adde
+See: https://github.com/LukeMathWalker/cargo-chef
