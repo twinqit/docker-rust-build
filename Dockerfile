@@ -1,9 +1,9 @@
-FROM rust:1.82
+FROM rust:1.84
 
 ARG TARGETPLATFORM
 
 RUN apt-get update && apt-get install -y musl-tools
-RUN cargo install --locked cargo-chef
+RUN cargo install --locked cargo-chef cargo-nextest
 
 RUN case "$TARGETPLATFORM" in \
     "linux/amd64")  echo "x86_64-unknown-linux-musl" > /tmp/target ;; \
