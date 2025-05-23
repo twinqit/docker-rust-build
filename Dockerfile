@@ -1,8 +1,8 @@
-FROM rust:1.86.0
+FROM rust:1.87.0
 
 ARG TARGETPLATFORM
 
-RUN apt-get update && apt-get install -y musl-tools
+RUN apt-get update && apt-get install -y musl-tools openssl
 RUN cargo install --locked cargo-chef cargo-nextest
 
 RUN case "$TARGETPLATFORM" in \
