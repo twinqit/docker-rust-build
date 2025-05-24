@@ -2,7 +2,8 @@ FROM rust:1.87.0
 
 ARG TARGETPLATFORM
 
-RUN apt-get update && apt-get install -y musl-tools openssl libssl-dev
+# Need to install openssl libssl-dev pkg-config to cross-compile Rust code that uses OpenSSL
+RUN apt-get update && apt-get install -y musl-tools openssl libssl-dev pkg-config
 RUN cargo install --locked cargo-chef cargo-nextest
 
 RUN case "$TARGETPLATFORM" in \
